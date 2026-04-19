@@ -11,12 +11,14 @@ export function SiteHeader() {
           </span>
         </Link>
         <nav className="flex items-center gap-6 text-sm">
-          <a
-            href="tel:+61200000000"
-            className="hidden text-muted hover:text-foreground sm:block"
-          >
-            (02) 0000 0000
-          </a>
+          {process.env.NEXT_PUBLIC_CONTACT_PHONE && (
+            <a
+              href={`tel:${process.env.NEXT_PUBLIC_CONTACT_PHONE.replace(/[\s()]/g, "")}`}
+              className="hidden text-muted hover:text-foreground sm:block"
+            >
+              {process.env.NEXT_PUBLIC_CONTACT_PHONE}
+            </a>
+          )}
           <Link
             href="/#how"
             className="rounded-full border border-border bg-background px-3.5 py-1.5 text-xs font-medium text-foreground hover:bg-surface"

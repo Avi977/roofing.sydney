@@ -38,7 +38,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="border-t border-border bg-surface">
+        <section id="how" className="border-t border-border bg-surface">
           <div className="mx-auto max-w-5xl px-6 py-16">
             <h2 className="text-center text-sm font-semibold uppercase tracking-wider text-muted">
               How it works
