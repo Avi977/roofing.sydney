@@ -11,7 +11,7 @@
 
 | # | Phase | Goal | Requirements | Status |
 |---|-------|------|--------------|--------|
-| 1 | High-Res Imagery | Replace tile streaming with Nearmap pay-per-site static image | IMG-01, IMG-02 | Not started |
+| 1 | High-Res Imagery | Replace tile streaming with Nearmap pay-per-site static image | IMG-01, IMG-02 | Planned |
 | 2 | AI Segmentation | Replace flood-fill with SAM-2 for clean roof masks + live colour preview | SEG-01, SEG-02, VIZ-01 | Not started |
 | 3 | AI Render + UX Polish | FLUX.1 Fill photorealistic render with before/after UX | VIZ-02, VIZ-03, UX-01, UX-02, UX-03 | Not started |
 
@@ -23,12 +23,18 @@
 
 **Requirements:** IMG-01, IMG-02
 
+**Plans:** 2 plans
+
+Plans:
+- [ ] 01-01-PLAN.md — Nearmap API route + nearmap.ts lib + .env.example (Wave 1, has checkpoint)
+- [ ] 01-02-PLAN.md — RoofEditor imageState UI integration + smoke-test checkpoint (Wave 2)
+
 **Scope:**
 - Add Nearmap pay-per-site API integration (new API endpoint `/api/nearmap-image`)
 - Fetch static aerial image at maximum available resolution for given lat/lng
-- Cache result per address (Supabase or filesystem) to avoid repeat charges
-- Render the static Nearmap image in the preview page alongside or replacing the MapLibre map tiles
-- Add `NEARMAP_API_KEY` and `NEARMAP_SURVEY_ID` env vars
+- Cache result per address (Supabase Storage bucket `nearmap-images`) to avoid repeat charges
+- Render the static Nearmap image in the preview page replacing the MapLibre map tiles
+- Add `NEARMAP_API_KEY` and `NEARMAP_USE_LEGACY` env vars (no NEARMAP_SURVEY_ID — fetched dynamically)
 
 **Success Criteria:**
 1. Preview page displays a Nearmap static image at visibly higher resolution than current Mapbox tiles for a Sydney address
@@ -111,3 +117,4 @@
 ---
 
 *Roadmap created: 2026-04-23*
+*Phase 1 planned: 2026-04-23*
