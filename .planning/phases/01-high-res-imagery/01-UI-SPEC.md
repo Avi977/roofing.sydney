@@ -1,10 +1,11 @@
 ---
 phase: 1
 slug: high-res-imagery
-status: draft
+status: approved
 shadcn_initialized: false
 preset: none
 created: 2026-04-23
+reviewed_at: 2026-04-23
 ---
 
 # Phase 1 — UI Design Contract
@@ -54,10 +55,10 @@ Derived from utility classes in `roof-editor.tsx` and `preview/page.tsx`:
 |------|------|--------|-------------|
 | Body / hint | 14px (text-sm) | 400 (font-normal) | 1.5 |
 | Label / button | 12px (text-xs) | 600 (font-semibold) | 1.5 |
-| Subheading | 16px (text-base implicit, text-sm font-medium) | 500 (font-medium) | 1.5 |
+| Subheading | 16px (text-base) | 400 (font-normal) | 1.5 |
 | Heading (page) | 24px / 30px responsive (text-2xl sm:text-3xl) | 600 (font-semibold) | 1.25 |
 
-Phase 1 new elements use text-sm (14px) / font-medium (500) for the button label to match the existing overlay pill pattern (`text-xs font-medium`). The "Load aerial photo" button is a primary action and uses font-semibold (600).
+Two weights only: 400 (font-normal) for body, labels, and subheadings; 600 (font-semibold) for headings and primary buttons. The "Load aerial photo" button uses `font-semibold` (600) to signal primary action weight.
 
 ---
 
@@ -134,11 +135,11 @@ No new third-party component libraries introduced. All new UI is hand-rolled JSX
 
 ## Checker Sign-Off
 
-- [ ] Dimension 1 Copywriting: PASS
-- [ ] Dimension 2 Visuals: PASS
-- [ ] Dimension 3 Color: PASS
-- [ ] Dimension 4 Typography: PASS
-- [ ] Dimension 5 Spacing: PASS
-- [ ] Dimension 6 Registry Safety: PASS
+- [x] Dimension 1 Copywriting: PASS
+- [x] Dimension 2 Visuals: PASS
+- [x] Dimension 3 Color: PASS
+- [x] Dimension 4 Typography: PASS
+- [x] Dimension 5 Spacing: PASS
+- [x] Dimension 6 Registry Safety: PASS
 
-**Approval:** pending
+**Approval:** approved 2026-04-23
