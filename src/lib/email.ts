@@ -25,7 +25,7 @@ export async function notifyContractor(lead: LeadInput): Promise<void> {
   const html = buildHtml(lead, mapsLink);
 
   await getResend().emails.send({
-    from: `roofing.sydney <${from}>`,
+    from: `Australian Roofing Contractors <${from}>`,
     to: [to],
     replyTo: lead.email,
     subject,
@@ -36,7 +36,7 @@ export async function notifyContractor(lead: LeadInput): Promise<void> {
 
 function buildText(lead: LeadInput, mapsLink: string | null): string {
   const lines = [
-    `New quote request from roofing.sydney`,
+    `New quote request from Australian Roofing Contractors`,
     ``,
     `Name:    ${lead.name}`,
     `Phone:   ${lead.phone}`,

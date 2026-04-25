@@ -7,7 +7,7 @@ export function SiteHeader() {
         <Link href="/" className="flex items-center gap-2">
           <LogoMark />
           <span className="text-sm font-semibold tracking-tight text-foreground">
-            roofing.sydney
+            Australian Roofing Contractors
           </span>
         </Link>
         <nav className="flex items-center gap-6 text-sm">
