@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 
 const SWATCHES = [
@@ -92,12 +93,12 @@ export function HeroBand() {
             </p>
 
             <div className="mt-8 flex flex-wrap gap-3">
-              <button onClick={() => runDemo()}
+              <Link href="/preview"
                 className="inline-flex items-center gap-2 rounded-full px-5 py-3 text-sm font-semibold transition-opacity hover:opacity-90"
                 style={{ background: "#c8443b", color: "#f1faee" }}>
-                Try colour AI
+                Try Sydney Roofing
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" /></svg>
-              </button>
+              </Link>
               <a href="#quote"
                 className="inline-flex items-center rounded-full px-5 py-3 text-sm transition-colors"
                 style={{ border: "1px solid var(--hero-border)", color: "var(--hero-ink-2)" }}>
@@ -121,7 +122,7 @@ export function HeroBand() {
             <div className="flex items-center justify-between px-4 py-3" style={{ borderBottom: "1px solid var(--hero-border)" }}>
               <div className="flex items-center gap-2 text-xs" style={{ color: "var(--hero-ink-2)" }}>
                 <span className="h-2 w-2 rounded-full bg-emerald-400" />
-                Colour AI · Live
+                Sydney Roofing
               </div>
               <span className="rounded-full border px-2 py-0.5 text-[10px]" style={{ borderColor: "var(--hero-border)", color: ink3 }}>Beta</span>
             </div>
@@ -129,12 +130,22 @@ export function HeroBand() {
             {/* Stage */}
             <div style={{ background: "rgba(0,0,0,0.2)", padding: 4 }}>
               {stage === "empty" && (
-                <div className="flex flex-col items-center justify-center gap-3 py-12 px-6 text-center" style={{ minHeight: 200 }}>
-                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke={ink3} strokeWidth="1.5" strokeLinecap="round">
-                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" /><circle cx="12" cy="10" r="3" />
-                  </svg>
-                  <p className="text-sm font-medium" style={{ color: "var(--hero-ink-2)" }}>Enter your address to see your home.</p>
-                  <p className="text-xs leading-relaxed" style={{ color: ink3, maxWidth: "28ch" }}>We&apos;ll fetch a satellite view and let you repaint the roof in any Colorbond colour.</p>
+                <div className="relative overflow-hidden" style={{ minHeight: 200 }}>
+                  <Image
+                    src="/images/aluminum-roofing.jpg"
+                    alt="Modern home with metal roof"
+                    fill
+                    className="object-cover"
+                    sizes="440px"
+                    priority
+                  />
+                  <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 px-6 text-center" style={{ background: "rgba(0,0,0,0.45)" }}>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgba(241,250,238,0.7)" strokeWidth="1.5" strokeLinecap="round">
+                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" /><circle cx="12" cy="10" r="3" />
+                    </svg>
+                    <p className="text-sm font-medium" style={{ color: "#f1faee" }}>Enter your address to see your home.</p>
+                    <p className="text-xs leading-relaxed" style={{ color: "rgba(241,250,238,0.6)", maxWidth: "28ch" }}>We&apos;ll fetch a satellite view and let you repaint the roof in any Colorbond colour.</p>
+                  </div>
                 </div>
               )}
 

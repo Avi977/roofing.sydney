@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const STEPS = [
   {
     n: "01",
@@ -53,6 +55,18 @@ export function ProcessBand() {
             </li>
           ))}
         </ol>
+
+        <div className="mt-4 grid grid-cols-3 gap-2 overflow-hidden rounded-2xl">
+          {[
+            { src: "/images/metal-install-2.jpg", alt: "Roofers installing standing seam metal panels" },
+            { src: "/images/titanium-zinc.jpg", alt: "Modern home with zinc standing seam roof overlooking water" },
+            { src: "/images/stone-coated-steel.jpg", alt: "Large home with stone-coated steel roof" },
+          ].map((img) => (
+            <div key={img.src} className="relative aspect-[4/3] overflow-hidden">
+              <Image src={img.src} alt={img.alt} fill className="object-cover" sizes="(max-width:640px) 100vw, 33vw" />
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
