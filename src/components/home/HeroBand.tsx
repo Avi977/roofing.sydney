@@ -5,12 +5,12 @@ import Image from "next/image";
 import Link from "next/link";
 
 const SWATCHES = [
-  { name: "Monument",  hex: "#7A7975" },
-  { name: "Basalt",    hex: "#3B3B3B" },
-  { name: "Surfmist",  hex: "#EFECE1" },
-  { name: "Manor Red", hex: "#9D4236" },
-  { name: "Woodland",  hex: "#4C5457" },
-  { name: "Jasper",    hex: "#6A6F59" },
+  { name: "Current",   hex: "#7A7975", img: "/images/titanium-zinc-hero.jpeg" },
+  { name: "Basalt",    hex: "#3B3B3B", img: "/images/titanium-zinc-basalt.jpeg" },
+  { name: "Surfmist",  hex: "#EFECE1", img: "/images/titanium-zinc-surfmist.jpeg" },
+  { name: "Manor Red", hex: "#9D4236", img: "/images/titanium-zinc-manor-red.jpeg" },
+  { name: "Woodland",  hex: "#4C5457", img: "/images/titanium-zinc-woodland.jpeg" },
+  { name: "Jasper",    hex: "#6A6F59", img: "/images/titanium-zinc-jasper.jpeg" },
 ];
 
 type Stage = "empty" | "loading" | "result";
@@ -37,6 +37,7 @@ export function HeroBand() {
   const [displayAddr, setDisplayAddr] = useState("");
   const [colour, setColour] = useState(SWATCHES[0]);
   const [loadMsg, setLoadMsg] = useState(LOAD_MSGS[0]);
+  const [swatchOffset, setSwatchOffset] = useState(0);
 
   function runDemo(addr?: string) {
     const a = (addr ?? address).trim() || "12 Bronte Rd, Bondi Junction NSW";
@@ -58,7 +59,7 @@ export function HeroBand() {
 
   function handleSwatch(s: typeof SWATCHES[0]) {
     setColour(s);
-    if (stage !== "result") runDemo();
+    runDemo();
   }
 
   const ink2 = "var(--hero-ink-2)";
@@ -69,7 +70,7 @@ export function HeroBand() {
   return (
     <section style={{ background: "var(--hero-bg-gradient)" }}>
       <div className="mx-auto max-w-6xl px-6">
-        <div className="grid items-center gap-10 py-14 lg:grid-cols-[1fr_440px] lg:gap-14">
+        <div className="grid items-center gap-10 py-14 lg:grid-cols-[1fr_500px] lg:gap-14">
 
           {/* ── Left ── */}
           <div>
@@ -130,10 +131,10 @@ export function HeroBand() {
             {/* Stage */}
             <div style={{ background: "rgba(0,0,0,0.2)", padding: 4 }}>
               {stage === "empty" && (
-                <div className="relative overflow-hidden" style={{ minHeight: 200 }}>
+                <div className="relative overflow-hidden" style={{ minHeight: 260 }}>
                   <Image
-                    src="/images/aluminum-roofing.jpg"
-                    alt="Modern home with metal roof"
+                    src="/images/titanium-zinc-hero.jpeg"
+                    alt="Modern home with titanium zinc roof"
                     fill
                     className="object-cover"
                     sizes="440px"
@@ -150,53 +151,39 @@ export function HeroBand() {
               )}
 
               {stage === "loading" && (
-                <div className="flex flex-col items-center justify-center gap-4" style={{ minHeight: 200 }}>
-                  <div className="relative overflow-hidden rounded-lg" style={{ width: "75%", maxWidth: 240, height: 110, border: "1px solid rgba(200,68,59,0.3)", background: "rgba(200,68,59,0.05)" }}>
-                    <div style={{ position: "absolute", left: 0, right: 0, height: 2, background: "linear-gradient(90deg,transparent,#c8443b,transparent)", animation: "scan 1.4s linear infinite" }} />
+                <div className="relative flex flex-col items-center justify-center gap-4" style={{ minHeight: 260 }}>
+                  <Image
+                    src="/images/titanium-zinc-top-view.jpeg"
+                    alt="Roof top view"
+                    fill
+                    className="object-cover"
+                    sizes="440px"
+                  />
+                  <div style={{ position: "absolute", inset: 0, background: "rgba(0,0,0,0.5)" }} />
+                  <div className="relative z-10 flex flex-col items-center gap-4">
+                    <div className="relative overflow-hidden rounded-lg" style={{ width: "75%", maxWidth: 240, height: 110, border: "1px solid rgba(200,68,59,0.5)", background: "rgba(200,68,59,0.1)" }}>
+                      <div style={{ position: "absolute", left: 0, right: 0, height: 2, background: "linear-gradient(90deg,transparent,#c8443b,transparent)", animation: "scan 1.4s linear infinite" }} />
+                    </div>
+                    <p className="font-mono text-xs" style={{ color: "#f1faee" }}>{loadMsg}</p>
                   </div>
-                  <p className="font-mono text-xs" style={{ color: ink2 }}>{loadMsg}</p>
                 </div>
               )}
 
               {stage === "result" && (
-                <div style={{ position: "relative" }}>
-                  <svg viewBox="0 0 388 228" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" style={{ display: "block", width: "100%", borderRadius: 8 }}>
-                    <defs>
-                      <pattern id="g" width="8" height="8" patternUnits="userSpaceOnUse"><rect width="8" height="8" fill="#3a4a2e" /><circle cx="2" cy="2" r="1" fill="#4a5a3a" opacity="0.5" /></pattern>
-                      <radialGradient id="tg"><stop offset="0%" stopColor="#2d4a1e" /><stop offset="100%" stopColor="#1a2a10" /></radialGradient>
-                      <filter id="sh"><feDropShadow dx="2" dy="4" stdDeviation="2" floodOpacity="0.35" /></filter>
-                    </defs>
-                    <rect width="388" height="228" fill="url(#g)" />
-                    <rect x="0" y="0" width="388" height="30" fill="#4a4a48" />
-                    <line x1="0" y1="15" x2="388" y2="15" stroke="#c4c4b8" strokeWidth="1.2" strokeDasharray="8,8" opacity="0.4" />
-                    <rect x="135" y="30" width="30" height="50" fill="#908a78" opacity="0.75" />
-                    <g filter="url(#sh)"><polygon points="18,90 82,90 82,145 18,145" fill="#5a4030" /><polygon points="18,90 50,77 82,90" fill="#7a5040" /></g>
-                    <g filter="url(#sh)"><polygon points="298,105 368,105 368,168 298,168" fill="#4a4a47" /><polygon points="298,105 333,92 368,105" fill="#6a6a67" /></g>
-                    <circle cx="238" cy="48" r="12" fill="url(#tg)" />
-                    <circle cx="258" cy="62" r="9" fill="url(#tg)" />
-                    <circle cx="104" cy="162" r="11" fill="url(#tg)" />
-                    <circle cx="338" cy="200" r="13" fill="url(#tg)" />
-                    <line x1="0" y1="93" x2="388" y2="93" stroke="#2a2a1e" strokeWidth="0.8" opacity="0.5" />
-                    <line x1="0" y1="178" x2="388" y2="178" stroke="#2a2a1e" strokeWidth="0.8" opacity="0.5" />
-                    <line x1="99" y1="30" x2="99" y2="228" stroke="#2a2a1e" strokeWidth="0.8" opacity="0.4" />
-                    <line x1="283" y1="30" x2="283" y2="228" stroke="#2a2a1e" strokeWidth="0.8" opacity="0.4" />
-                    <g filter="url(#sh)">
-                      <polygon points="116,196 256,196 256,100 116,100" fill="#c8bea4" />
-                      <polygon points="111,98 261,98 261,152 111,152" style={{ fill: darken(colour.hex, 0.12) }} />
-                      <polygon points="111,149 261,149 261,200 111,200" style={{ fill: colour.hex }} />
-                      <line x1="111" y1="151" x2="261" y2="151" stroke="#3a3836" strokeWidth="1.2" />
-                      <polygon points="235,152 273,152 273,218 235,218" style={{ fill: darken(colour.hex, 0.08) }} />
-                      <line x1="235" y1="185" x2="273" y2="185" stroke="#3a3836" strokeWidth="1" />
-                      <rect x="168" y="107" width="12" height="15" fill="#5a4a3a" />
-                      <rect x="168" y="105" width="12" height="3" fill="#2a1a0a" />
-                    </g>
-                  </svg>
+                <div className="relative overflow-hidden" style={{ minHeight: 260 }}>
+                  <Image
+                    src={colour.img}
+                    alt={`Roof in ${colour.name}`}
+                    fill
+                    className="object-cover"
+                    sizes="440px"
+                  />
                   <div style={{ position: "absolute", bottom: 8, left: 8, background: "rgba(11,37,69,0.85)", color: "#f1faee", borderRadius: 999, padding: "3px 10px", fontSize: 10, display: "flex", alignItems: "center", gap: 4 }}>
                     <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" /><circle cx="12" cy="10" r="3" /></svg>
                     {displayAddr}
                   </div>
                   <div style={{ position: "absolute", top: 8, right: 8, background: "rgba(11,37,69,0.85)", color: "#f1faee", borderRadius: 999, padding: "3px 8px", fontSize: 9, letterSpacing: ".1em", textTransform: "uppercase" }}>
-                    AI · Recoloured
+                    {colour.name} · Preview
                   </div>
                 </div>
               )}
@@ -217,16 +204,36 @@ export function HeroBand() {
               </button>
             </form>
 
-            {/* Swatches */}
-            <div className="grid grid-cols-6 gap-1 px-3 pb-3">
-              {SWATCHES.map((s) => (
-                <button key={s.hex} onClick={() => handleSwatch(s)}
-                  className="overflow-hidden rounded transition-all"
-                  style={{ border: `1px solid ${s.hex === colour.hex ? "#c8443b" : "var(--hero-border)"}` }}>
-                  <div style={{ height: 20, background: s.hex }} />
-                  <div className="py-1 text-center" style={{ fontSize: 8, color: ink3 }}>{s.name}</div>
-                </button>
-              ))}
+            {/* Swatches carousel */}
+            <div className="flex items-center gap-2 px-3 pb-3">
+              <button
+                onClick={() => setSwatchOffset((o) => Math.max(0, o - 1))}
+                disabled={swatchOffset === 0}
+                className="flex-shrink-0 rounded-full p-1 transition-opacity disabled:opacity-25 hover:opacity-70"
+                style={{ border: "1px solid var(--hero-border)", color: ink2 }}
+                aria-label="Previous colours"
+              >
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><polyline points="15 18 9 12 15 6" /></svg>
+              </button>
+              <div className="grid flex-1 gap-2" style={{ gridTemplateColumns: "repeat(3, 1fr)" }}>
+                {SWATCHES.slice(swatchOffset, swatchOffset + 3).map((s) => (
+                  <button key={s.hex} onClick={() => handleSwatch(s)}
+                    className="overflow-hidden rounded-lg transition-all hover:scale-[1.03]"
+                    style={{ border: `2px solid ${s.hex === colour.hex ? "#c8443b" : "var(--hero-border)"}` }}>
+                    <div style={{ height: 36, background: s.hex }} />
+                    <div className="py-1.5 text-center font-medium" style={{ fontSize: 11, color: ink2 }}>{s.name}</div>
+                  </button>
+                ))}
+              </div>
+              <button
+                onClick={() => setSwatchOffset((o) => Math.min(SWATCHES.length - 3, o + 1))}
+                disabled={swatchOffset >= SWATCHES.length - 3}
+                className="flex-shrink-0 rounded-full p-1 transition-opacity disabled:opacity-25 hover:opacity-70"
+                style={{ border: "1px solid var(--hero-border)", color: ink2 }}
+                aria-label="Next colours"
+              >
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><polyline points="9 18 15 12 9 6" /></svg>
+              </button>
             </div>
 
             {/* Real tool CTA — only in result state */}
