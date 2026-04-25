@@ -60,13 +60,13 @@ export function HeroBand() {
     if (stage !== "result") runDemo();
   }
 
-  const ink2 = "rgba(241,250,238,0.6)";
-  const ink3 = "rgba(241,250,238,0.35)";
-  const heroBorder = "rgba(255,255,255,0.1)";
-  const heroSurface = "rgba(255,255,255,0.05)";
+  const ink2 = "var(--hero-ink-2)";
+  const ink3 = "var(--hero-ink-3)";
+  const heroBorder = "var(--hero-border)";
+  const heroSurface = "var(--hero-surface)";
 
   return (
-    <section style={{ background: "radial-gradient(ellipse at 65% 40%, #1a2035 0%, #0b0f19 65%)" }}>
+    <section style={{ background: "var(--hero-bg-gradient)" }}>
       <div className="mx-auto max-w-6xl px-6">
         <div className="grid items-center gap-10 py-14 lg:grid-cols-[1fr_440px] lg:gap-14">
 
@@ -79,7 +79,7 @@ export function HeroBand() {
                 AI roof colour visualiser · Free &amp; instant</span>
             </div>
 
-            <h1 className="font-serif text-5xl font-light leading-[1.06] tracking-tight lg:text-6xl" style={{ color: "#f1faee" }}>
+            <h1 className="font-serif text-5xl font-light leading-[1.06] tracking-tight lg:text-6xl" style={{ color: "var(--hero-ink)" }}>
               See your roof in a{" "}
               <em className="italic" style={{ color: "#c8443b" }}>new colour</em>{" "}
               before you commit.
@@ -100,7 +100,7 @@ export function HeroBand() {
               </button>
               <a href="#quote"
                 className="inline-flex items-center rounded-full px-5 py-3 text-sm transition-colors"
-                style={{ border: `1px solid rgba(241,250,238,0.25)`, color: "rgba(241,250,238,0.75)" }}>
+                style={{ border: "1px solid var(--hero-border)", color: "var(--hero-ink-2)" }}>
                 Book an inspection
               </a>
             </div>
@@ -108,7 +108,7 @@ export function HeroBand() {
             <div className="mt-10 flex gap-8">
               {[["2,400+", "Sydney roofs since 2008"], ["25yr", "Workmanship warranty"], ["4.9/5", "Google reviews"]].map(([n, l]) => (
                 <div key={l}>
-                  <div className="font-serif text-2xl font-semibold" style={{ color: "#f1faee" }}>{n}</div>
+                  <div className="font-serif text-2xl font-semibold" style={{ color: "var(--hero-ink)" }}>{n}</div>
                   <div className="mt-1 text-xs leading-snug" style={{ color: ink3, maxWidth: "14ch" }}>{l}</div>
                 </div>
               ))}
@@ -118,12 +118,12 @@ export function HeroBand() {
           {/* ── Right: AI Panel ── */}
           <div className="overflow-hidden rounded-2xl" style={{ background: heroSurface, border: `1px solid ${heroBorder}` }}>
             {/* Panel head */}
-            <div className="flex items-center justify-between px-4 py-3" style={{ borderBottom: `1px solid rgba(255,255,255,0.08)` }}>
-              <div className="flex items-center gap-2 text-xs" style={{ color: "rgba(241,250,238,0.7)" }}>
+            <div className="flex items-center justify-between px-4 py-3" style={{ borderBottom: "1px solid var(--hero-border)" }}>
+              <div className="flex items-center gap-2 text-xs" style={{ color: "var(--hero-ink-2)" }}>
                 <span className="h-2 w-2 rounded-full bg-emerald-400" />
                 Colour AI · Live
               </div>
-              <span className="rounded-full border px-2 py-0.5 text-[10px]" style={{ borderColor: "rgba(255,255,255,0.15)", color: ink3 }}>Beta</span>
+              <span className="rounded-full border px-2 py-0.5 text-[10px]" style={{ borderColor: "var(--hero-border)", color: ink3 }}>Beta</span>
             </div>
 
             {/* Stage */}
@@ -133,7 +133,7 @@ export function HeroBand() {
                   <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke={ink3} strokeWidth="1.5" strokeLinecap="round">
                     <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" /><circle cx="12" cy="10" r="3" />
                   </svg>
-                  <p className="text-sm font-medium" style={{ color: "rgba(241,250,238,0.65)" }}>Enter your address to see your home.</p>
+                  <p className="text-sm font-medium" style={{ color: "var(--hero-ink-2)" }}>Enter your address to see your home.</p>
                   <p className="text-xs leading-relaxed" style={{ color: ink3, maxWidth: "28ch" }}>We&apos;ll fetch a satellite view and let you repaint the roof in any Colorbond colour.</p>
                 </div>
               )}
@@ -198,10 +198,10 @@ export function HeroBand() {
                 onChange={(e) => setAddress(e.target.value)}
                 placeholder="e.g. 12 Bronte Rd, Bondi Junction"
                 className="flex-1 rounded-lg px-3 py-2 text-sm outline-none"
-                style={{ background: "rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.12)", color: "#f1faee" }}
+                style={{ background: "var(--hero-surface)", border: "1px solid var(--hero-border)", color: "var(--hero-ink)" }}
               />
               <button type="submit" className="rounded-lg px-4 py-2 text-sm font-semibold whitespace-nowrap transition-opacity hover:opacity-90"
-                style={{ background: "#f1faee", color: "#0b0f19" }}>
+                style={{ background: "var(--hero-button-bg)", color: "var(--hero-button-ink)" }}>
                 Find roof
               </button>
             </form>
@@ -211,7 +211,7 @@ export function HeroBand() {
               {SWATCHES.map((s) => (
                 <button key={s.hex} onClick={() => handleSwatch(s)}
                   className="overflow-hidden rounded transition-all"
-                  style={{ border: `1px solid ${s.hex === colour.hex ? "#c8443b" : "rgba(255,255,255,0.1)"}` }}>
+                  style={{ border: `1px solid ${s.hex === colour.hex ? "#c8443b" : "var(--hero-border)"}` }}>
                   <div style={{ height: 20, background: s.hex }} />
                   <div className="py-1 text-center" style={{ fontSize: 8, color: ink3 }}>{s.name}</div>
                 </button>
