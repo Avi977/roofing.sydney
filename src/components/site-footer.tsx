@@ -3,7 +3,7 @@ export function SiteFooter() {
     <footer className="border-t border-border">
       <div className="mx-auto flex max-w-5xl flex-col gap-3 px-6 py-8 text-xs text-muted sm:flex-row sm:items-center sm:justify-between">
         <div>
-          &copy; {new Date().getFullYear()} roofing.sydney &middot; Licensed
+          &copy; {new Date().getFullYear()} Australian Roofing Contractors &middot; Licensed
           metal roofing contractor
         </div>
         <div className="flex gap-4">

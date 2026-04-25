@@ -3,8 +3,8 @@ import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 
 export const metadata = {
-  title: "Terms of Service — roofing.sydney",
-  description: "Terms governing your use of the roofing.sydney website.",
+  title: "Terms of Service",
+  description: "Terms governing your use of the Australian Roofing Contractors website.",
 };
 
 export default function TermsPage() {
@@ -25,7 +25,7 @@ export default function TermsPage() {
             <section>
               <h2 className="text-base font-semibold text-foreground">1. Acceptance</h2>
               <p className="mt-2 text-muted">
-                By accessing or using roofing.sydney (&ldquo;the Service&rdquo;) you agree to be
+                By accessing or using Australian Roofing Contractors (&ldquo;the Service&rdquo;) you agree to be
                 bound by these Terms. If you do not agree, please do not use the Service.
               </p>
             </section>
@@ -80,7 +80,7 @@ export default function TermsPage() {
               <h2 className="text-base font-semibold text-foreground">7. Intellectual property</h2>
               <p className="mt-2 text-muted">
                 All content on the Service, except aerial imagery, is owned by or licensed to
-                roofing.sydney. You may not reproduce, distribute or create derivative works
+                Australian Roofing Contractors. You may not reproduce, distribute or create derivative works
                 without our express written consent.
               </p>
             </section>

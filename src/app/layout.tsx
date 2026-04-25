@@ -8,12 +8,15 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "roofing.sydney — See your new Colorbond roof before you commit",
+  title: {
+    default: "Australian Roofing Contractors — See your new Colorbond roof before you commit",
+    template: "%s — Australian Roofing Contractors",
+  },
   description:
     "Pick a Colorbond colour and see a realistic preview on your actual Sydney home. Free aerial visualisation, free quote, no obligation.",
   metadataBase: new URL("https://roofing.sydney"),
   openGraph: {
-    title: "See your new Colorbond roof before you commit",
+    title: "Australian Roofing Contractors — See your new Colorbond roof",
     description:
       "Pick a colour. See it on your actual roof. Book a free quote.",
     type: "website",
