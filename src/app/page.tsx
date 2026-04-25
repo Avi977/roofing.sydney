@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { AddressAutocomplete } from "@/components/address-autocomplete";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
@@ -35,6 +36,24 @@ export default function Home() {
                 </p>
               </div>
             </div>
+          </div>
+        </section>
+
+        <section className="border-t border-border">
+          <div className="mx-auto max-w-5xl px-6 py-12 text-center">
+            <h2 className="text-xl font-semibold tracking-tight text-foreground">
+              Ready to see your new roof?
+            </h2>
+            <p className="mt-3 max-w-md mx-auto text-sm text-muted">
+              Use our free AI visualiser to preview Colorbond colours on your actual
+              home — then book a no-obligation quote.
+            </p>
+            <Link
+              href="/preview"
+              className="mt-6 inline-flex items-center rounded-full bg-foreground px-5 py-2.5 text-sm font-semibold text-background hover:opacity-90"
+            >
+              Check My Roof Design
+            </Link>
           </div>
         </section>
 
