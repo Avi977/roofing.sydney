@@ -59,8 +59,15 @@ See: `.planning/PROJECT.md` (updated 2026-04-23)
 ## Session Continuity
 
 **Last activity:** 2026-04-25
-**Stopped at:** session resumed — Phase 4 confirmed complete (committed 46718dc)
-**Next action:** Execute Phase 1 — High-Res Imagery (2 plans: Nearmap static image API integration)
+**Stopped at:** Quick tasks — hero cream theme, images, client intake + prod checklist
+**Next action:** Send `docs/client-intake.md` to client; then execute Phase 1 (Nearmap imagery)
+
+### Quick Tasks Completed
+
+| # | Description | Date | Commit | Directory |
+|---|-------------|------|--------|-----------|
+| 260425-5vu | Light theme hero cream background | 2026-04-25 | be4d24c | [260425-5vu](./quick/260425-5vu-change-light-theme-hero-section-backgrou/) |
+| 260425-hkq | AU roofing research + client intake + prod checklist | 2026-04-25 | — | [260425-hkq](./quick/260425-hkq-research-au-roofing-website-best-practic/) |
 
 ---
 
