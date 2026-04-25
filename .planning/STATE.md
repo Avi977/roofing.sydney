@@ -1,3 +1,19 @@
+---
+gsd_state_version: 1.0
+milestone: v1.0
+milestone_name: milestone
+status: unknown
+stopped_at: Phase 4 UI-SPEC approved — `.planning/phases/04-main-site-rebrand-cta/04-UI-SPEC.md`
+last_updated: "2026-04-24T00:00:00.000Z"
+last_activity: 2026-04-24
+progress:
+  total_phases: 4
+  completed_phases: 0
+  total_plans: 2
+  completed_plans: 0
+  percent: 0
+---
+
 # Project State — Roofing Sydney AI Roof Visualizer
 
 ## Project Reference
@@ -6,7 +22,7 @@ See: `.planning/PROJECT.md` (updated 2026-04-23)
 
 **Core value:** A homeowner can see exactly what their home will look like with a new roof — accurately segmented, photorealistic — before committing to a quote.
 
-**Current focus:** Phase 1 planned — ready to execute
+**Current focus:** Phase 1 — High-Res Imagery
 
 ---
 
@@ -25,6 +41,7 @@ See: `.planning/PROJECT.md` (updated 2026-04-23)
 | 1 | High-Res Imagery | Ready to execute | 2 |
 | 2 | AI Segmentation | Not started | — |
 | 3 | AI Render + UX Polish | Not started | — |
+| 4 | Main Site Rebrand + CTA | Not started | — |
 
 ---
 
@@ -41,9 +58,17 @@ See: `.planning/PROJECT.md` (updated 2026-04-23)
 
 ## Session Continuity
 
-**Last activity:** 2026-04-23 — Phase 1 planned (2 plans, 2 waves)
-**Stopped at:** Phase 1 plans verified — `.planning/phases/01-high-res-imagery/01-01-PLAN.md`, `01-02-PLAN.md`
-**Next action:** `/gsd-execute-phase 1`
+**Last activity:** 2026-04-24
+**Stopped at:** Phase 4 UI-SPEC approved — `.planning/phases/04-main-site-rebrand-cta/04-UI-SPEC.md`
+**Next action:** `/gsd-plan-phase 4 --skip-ui` — UI-SPEC ready, proceed to planning
+
+---
+
+## Accumulated Context
+
+### Roadmap Evolution
+
+- Phase 4 added: Main Site Rebrand + CTA — rename to Australian Roofing Contractors, metal roofing only, add "Check My Roof Design" CTA → roofing.sydney (independent of AI phases)
 
 ---
 
