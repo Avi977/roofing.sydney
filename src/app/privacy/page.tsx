@@ -3,8 +3,8 @@ import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 
 export const metadata = {
-  title: "Privacy Policy — roofing.sydney",
-  description: "How roofing.sydney collects, uses and protects your personal information.",
+  title: "Privacy Policy",
+  description: "How Australian Roofing Contractors collects, uses and protects your personal information.",
 };
 
 export default function PrivacyPage() {
@@ -25,7 +25,7 @@ export default function PrivacyPage() {
             <section>
               <h2 className="text-base font-semibold">1. Who we are</h2>
               <p className="mt-2 text-muted">
-                roofing.sydney is operated by a licensed metal roofing contractor based in Sydney,
+                Australian Roofing Contractors is operated by a licensed metal roofing contractor based in Sydney,
                 New South Wales, Australia. We offer an online roof colour preview tool and connect
                 homeowners with our quoting team.
               </p>
