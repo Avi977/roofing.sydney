@@ -14,6 +14,7 @@
 | 1 | High-Res Imagery | Replace tile streaming with Nearmap pay-per-site static image | IMG-01, IMG-02 | Planned |
 | 2 | AI Segmentation | Replace flood-fill with SAM-2 for clean roof masks + live colour preview | SEG-01, SEG-02, VIZ-01 | Not started |
 | 3 | AI Render + UX Polish | FLUX.1 Fill photorealistic render with before/after UX | VIZ-02, VIZ-03, UX-01, UX-02, UX-03 | Not started |
+| 4 | Main Site Rebrand + CTA | Rebrand main site to Australian Roofing Contractors, metal roofing only, add CTA → roofing.sydney | BRD-01, BRD-02, BRD-03 | Planned |
 
 ---
 
@@ -97,6 +98,34 @@ Plans:
 
 ---
 
+## Phase 4: Main Site Rebrand + CTA Integration
+
+**Goal:** Rebrand the main Australian Roofing Contractors website — metal roofing only, rename all branding, and add a prominent "Check My Roof Design" CTA that routes users to roofing.sydney for the AI roof visualizer tool.
+
+**Requirements:** BRD-01, BRD-02, BRD-03
+
+**Plans:** 1 plan
+
+Plans:
+- [ ] 04-01-PLAN.md — All branding edits + CTA section insertion + BRD-02 verification (Wave 1)
+
+**Scope:**
+- Rename site title, logo text, and meta tags to "Australian Roofing Contractors"
+- Remove all non-metal roofing types from services, pricing, and copy — metal roofing only
+- Add a "Check My Roof Design" CTA button/section on the home page linking to roofing.sydney
+- Treat roofing.sydney as a separate product (external link, no shared auth/state)
+- No changes to lead form, contact details, or existing page structure
+
+**Success Criteria:**
+1. Site title, all visible branding, and page titles read "Australian Roofing Contractors"
+2. No references to tile, terracotta, slate, or other non-metal roof types remain
+3. Home page has a prominent CTA linking to `https://roofing.sydney` that opens correctly
+4. All existing pages (contact, services, about) remain functional and correctly branded
+
+**Depends on:** Independent — can be executed before or after AI phases
+
+---
+
 ## Requirement Coverage
 
 | REQ-ID | Description | Phase |
@@ -112,9 +141,14 @@ Plans:
 | UX-02  | Loading state during generation | 3 |
 | UX-03  | Before/after comparison display | 3 |
 
-**Coverage:** 10/10 v1 requirements mapped ✓
+| BRD-01 | Rebrand site to Australian Roofing Contractors | 4 |
+| BRD-02 | Metal roofing only — remove non-metal roof types | 4 |
+| BRD-03 | "Check My Roof Design" CTA → roofing.sydney | 4 |
+
+**Coverage:** 13/13 v1 requirements mapped ✓
 
 ---
 
 *Roadmap created: 2026-04-23*
 *Phase 1 planned: 2026-04-23*
+*Phase 4 planned: 2026-04-25*
