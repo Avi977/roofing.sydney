@@ -1,7 +1,8 @@
 ---
 phase: 4
 slug: main-site-rebrand-cta
-status: draft
+status: approved
+reviewed_at: 2026-04-24
 shadcn_initialized: false
 preset: none
 created: 2026-04-24
@@ -56,7 +57,6 @@ All sizes and weights are carried forward unchanged from the existing codebase. 
 | Role | Size | Weight | Line Height | Tailwind Class |
 |------|------|--------|-------------|----------------|
 | Body | 14px | 400 regular | 1.5 | `text-sm leading-relaxed` |
-| Label / small | 12px | 500 medium | 1.4 | `text-xs font-medium` |
 | Subheading | 16px | 600 semibold | 1.5 | `text-base font-semibold` |
 | Section heading | 20px | 600 semibold | 1.4 | `text-xl font-semibold` |
 | H1 display | 36–60px | 600 semibold | 1.15 | `text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight` |
