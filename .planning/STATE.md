@@ -3,7 +3,7 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: unknown
-stopped_at: Phase 4 UI-SPEC approved — `.planning/phases/04-main-site-rebrand-cta/04-UI-SPEC.md`
+stopped_at: Phase 4 context gathered — `.planning/phases/04-main-site-rebrand-cta/04-CONTEXT.md`
 last_updated: "2026-04-24T00:00:00.000Z"
 last_activity: 2026-04-24
 progress:
@@ -60,7 +60,7 @@ See: `.planning/PROJECT.md` (updated 2026-04-23)
 
 **Last activity:** 2026-04-24
 **Stopped at:** Phase 4 UI-SPEC approved — `.planning/phases/04-main-site-rebrand-cta/04-UI-SPEC.md`
-**Next action:** `/gsd-plan-phase 4 --skip-ui` — UI-SPEC ready, proceed to planning
+**Next action:** `/gsd-plan-phase 4` — Context captured, ready to plan
 
 ---
 
