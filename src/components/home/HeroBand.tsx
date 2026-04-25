@@ -33,15 +33,13 @@ const LOAD_MSGS = [
 
 export function HeroBand() {
   const [stage, setStage] = useState<Stage>("empty");
-  const [address, setAddress] = useState("");
   const [displayAddr, setDisplayAddr] = useState("");
   const [colour, setColour] = useState(SWATCHES[0]);
   const [loadMsg, setLoadMsg] = useState(LOAD_MSGS[0]);
   const [swatchOffset, setSwatchOffset] = useState(0);
 
-  function runDemo(addr?: string) {
-    const a = (addr ?? address).trim() || "12 Bronte Rd, Bondi Junction NSW";
-    setDisplayAddr(a);
+  function runDemo() {
+    setDisplayAddr("12 Bronte Rd, Bondi Junction NSW");
     setStage("loading");
     setLoadMsg(LOAD_MSGS[0]);
     let i = 0;
@@ -50,11 +48,6 @@ export function HeroBand() {
       if (i < LOAD_MSGS.length) setLoadMsg(LOAD_MSGS[i]);
     }, 600);
     setTimeout(() => { clearInterval(tick); setStage("result"); }, 2600);
-  }
-
-  function handleSubmit(e: React.FormEvent) {
-    e.preventDefault();
-    runDemo();
   }
 
   function handleSwatch(s: typeof SWATCHES[0]) {
@@ -189,20 +182,6 @@ export function HeroBand() {
               )}
             </div>
 
-            {/* Address form */}
-            <form onSubmit={handleSubmit} className="flex gap-2 p-3">
-              <input
-                value={address}
-                onChange={(e) => setAddress(e.target.value)}
-                placeholder="e.g. 12 Bronte Rd, Bondi Junction"
-                className="flex-1 rounded-lg px-3 py-2 text-sm outline-none"
-                style={{ background: "var(--hero-surface)", border: "1px solid var(--hero-border)", color: "var(--hero-ink)" }}
-              />
-              <button type="submit" className="rounded-lg px-4 py-2 text-sm font-semibold whitespace-nowrap transition-opacity hover:opacity-90"
-                style={{ background: "var(--hero-button-bg)", color: "var(--hero-button-ink)" }}>
-                Find roof
-              </button>
-            </form>
 
             {/* Swatches carousel */}
             <div className="flex items-center gap-2 px-3 pb-3">

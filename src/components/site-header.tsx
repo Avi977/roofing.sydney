@@ -1,10 +1,11 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ThemeToggle } from "@/components/ThemeToggle";
 
 const NAV_LINKS = [
+  { label: "Home", href: "/" },
   { label: "Services", href: "/#services" },
-  { label: "Colour AI", href: "/preview" },
-  { label: "Process", href: "/#process" },
+  { label: "Contact", href: "/#quote" },
 ];
 
 export function SiteHeader() {
@@ -12,7 +13,7 @@ export function SiteHeader() {
     <header className="sticky top-0 z-30 border-b border-border/80 bg-background/80 backdrop-blur">
       <div className="mx-auto flex h-14 max-w-6xl items-center justify-between px-6">
         <Link href="/" className="flex items-center gap-2">
-          <LogoMark />
+          <Image src="/images/logo.png" alt="Australian Roofing Contractors" width={48} height={48} className="object-contain" />
           <span className="text-sm font-semibold tracking-tight text-foreground">
             Australian Roofing Contractors
           </span>
@@ -45,16 +46,5 @@ export function SiteHeader() {
         </div>
       </div>
     </header>
-  );
-}
-
-function LogoMark() {
-  return (
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden className="text-foreground">
-      <path
-        d="M3 11.5 12 4l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1v-8.5Z"
-        stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round"
-      />
-    </svg>
   );
 }
